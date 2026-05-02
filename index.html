@@ -75,12 +75,30 @@
             <h2>Our Services</h2>
             <p class="section-subtitle">Expert repairs for your washer, dryer, refrigerator, oven & more.</p>
             <ul class="service-list">
-                <li><span class="emoji-icon">❄️</span> Refrigerator Repair</li>
-                <li><span class="emoji-icon">🧺</span> Washer Repair</li>
-                <li><span class="emoji-icon">♨️</span> Dryer Repair</li>
-                <li><span class="emoji-icon">🍽️</span> Dishwasher Repair</li>
-                <li><span class="emoji-icon">🔥</span> Oven Repair</li>
-                <li><span class="emoji-icon">🍳</span> Range Repair</li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">❄️</span> Refrigerator Repair</div>
+                    <p class="service-issues">Not cooling, leaking water, making strange noises</p>
+                </li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">🧺</span> Washer Repair</div>
+                    <p class="service-issues">Not spinning, won't drain, leaking</p>
+                </li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">♨️</span> Dryer Repair</div>
+                    <p class="service-issues">Not heating, won't spin, squeaking noises</p>
+                </li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">🍽️</span> Dishwasher Repair</div>
+                    <p class="service-issues">Not draining, won't start, leaking</p>
+                </li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">🔥</span> Oven Repair</div>
+                    <p class="service-issues">Not heating, won't turn on, uneven baking</p>
+                </li>
+                <li>
+                    <div class="service-header"><span class="emoji-icon">🍳</span> Range Repair</div>
+                    <p class="service-issues">Burners won't ignite, heating elements broken, sparking</p>
+                </li>
             </ul>
         </div>
     </section>
@@ -171,6 +189,29 @@
             <p>&copy; 2026 Hemlock Appliance Repair. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const stickyCta = document.querySelector('.sticky-cta');
+            const mainCta = document.querySelector('.hero .btn-primary');
+
+            if (stickyCta && mainCta) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) {
+                            stickyCta.classList.add('show');
+                        } else {
+                            stickyCta.classList.remove('show');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                observer.observe(mainCta);
+            }
+        });
+    </script>
 </body>
 
 </html>

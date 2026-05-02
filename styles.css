@@ -246,17 +246,32 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
-    font-size: 1.1rem;
-    font-weight: 600;
     display: flex;
-    align-items: center;
-    color: var(--primary-light);
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .service-list li:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-color: var(--accent-color);
+}
+
+.service-header {
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: var(--primary-light);
+    margin-bottom: 8px;
+}
+
+.service-issues {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #64748b;
+    padding-left: 39px;
+    line-height: 1.4;
 }
 
 .service-list .emoji-icon {
@@ -373,11 +388,20 @@ body {
     font-weight: 700;
     z-index: 1000;
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.sticky-cta.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .sticky-cta:active {
